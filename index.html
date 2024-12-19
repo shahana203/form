@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feedback Form</title>
 </head>
-<body style="background-color: 
-#d6d6e0; padding: 40px; border-radius: 0%;">
+<body style="padding: 40px; border-radius: 1px;">
 
   <h2 style="text-align: center;">Feedback Form</h2>
   
   <form id="feedbackForm"style="max-width: 500px; margin: 0 auto; background-color: #fff; padding: 20px; border-radius:6px;">
     
-    <!-- Name Input -->
+    
    
      <label for="name"style="display: block;
       margin-bottom: 5px; font-size: 16px; color: #333;">Name:</label>
@@ -20,7 +19,7 @@
     <div id="nameError" style="color: red; display: none;">Name is required!</div>
     <br><br>
 
-    <!-- Email Input -->
+    
     <label for="email"style="display: block;
       margin-bottom: 5px; font-size: 16px; color: #333;">Email:</label>
     <input type="text" id="email" name="email"style="width: 96%; padding: 10px; margin-bottom: 10px; border: 1px solid;">
@@ -30,18 +29,18 @@
     <div id="feedbackError" style="color: red; display: none; font-size: 14px;">Feedback is required!</div>
     <br><br>
 
-    <!-- Submit Button -->
+    
     <button type="submit"style="width: 50%; padding: 12px; background-color:black ; color: white; border: none; border-radius: 4px; font-size: 16px; display: block;margin: 0 auto;">Submit</button>
   </form>
 
-  <div id="successMessage" style="color: green; display: none;">Thank you for your feedback!</div>
+  <div id="successMessage" style="color: green; text-align: center; display: none;">Thank you for your feedback!</div>
 
   <script>
      document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-      // Prevent form submission
+      
       event.preventDefault();
       
-      // Clear previous success or error messages
+      
       document.getElementById('successMessage').style.display = 'none';
       document.getElementById('nameError').style.display = 'none';
       document.getElementById('emailError').style.display = 'none';
@@ -52,13 +51,13 @@
       let feedback = document.getElementById('feedback').value;
       let isValid = true;
 
-      // Validate Name
+      
       if (name === '') {
         document.getElementById('nameError').style.display = 'block';
         isValid = false;
       }
 
-      // Validate Email
+      
       let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
       if (!emailRegex.test(email)) {
         document.getElementById('emailError').style.display = 'block';
@@ -70,7 +69,7 @@
         isValid = false;
       }
 
-      // If valid, show success message and clear the form
+     
       if (isValid) {
         document.getElementById('successMessage').style.display = 'block';
         document.getElementById('feedbackForm');
